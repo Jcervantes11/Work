@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int horIn,minIn,segIn,horFi,minFi,segFi,horRe,minRe,segRe;
+
+    cout<<"Horas Iniciales:";
+    cin>>horIn;
+    cout<<"Minutos Iniciales:";
+    cin>>minIn;
+    cout<<"Segundos Iniciales:";
+    cin>>segIn;
+    cout<<"Horas Finales:";
+    cin>>horFi;
+    cout<<"Minutos Finales:";
+    cin>>minFi;
+    cout<<"Segundos Finales:";
+    cin>>segFi;
+
+    if (horIn <=23 && minIn<=59)
+        {
+            if (segIn<=59 && segFi<=59)
+                {
+                    if (horFi <=23 && minFi<=59)
+                        {
+
+                            horRe=horFi-horIn;
+                            minRe=minFi-minIn;
+                            segRe=segFi-segIn;
+                            if (segRe<0)
+                                {
+
+                            segRe+=60;
+                            minRe-=1;
+                                }
+
+                                if (minRe<0)
+                                    {
+
+                                        minRe+=60;
+                                        horRe-=1;
+                                    }
+                                if(horRe<0)
+                                    {
+                                        horRe+=24;
+                                    }
+                                    cout<<"Tu total de horas trabajadas Son:"<<horRe<<":"<<minRe<<":"<<segRe;
+                        }
+                }
+        }
+
+        else
+            {
+                cout<<"Las Horas O Minutos O Segundos Son Incorectos!!!";
+            }
+        return 0;
+}
